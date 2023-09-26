@@ -1,6 +1,6 @@
 import TodoItem from "../TodoItem/TodoItem";
 
-const TodoList = ({ todos }) => {
+const TodoList = ({ todos, setTodos, setInputTodo, setAccionById }) => {
   return (
     <div className="mt-4">
       <h3>Lista de tareas</h3>
@@ -16,7 +16,14 @@ const TodoList = ({ todos }) => {
         </thead>
         <tbody>
           {todos.map((todo) => (
-            <TodoItem key={TodoItem.id} todo={todo}></TodoItem>
+            <TodoItem
+              key={todo.id}
+              todo={todo}
+              todos={todos}
+              setTodos={setTodos}
+              setInputTodo={setInputTodo}
+              setAccionById={setAccionById}
+            ></TodoItem>
           ))}
         </tbody>
       </table>
